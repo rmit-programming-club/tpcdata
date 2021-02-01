@@ -1,0 +1,17 @@
+[package]
+name = "tpcdata"
+version = "0.1.0"
+authors = [
+    "Sam Nolan"
+]
+edition = "2020"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.1.1", features = ["macros"] }
+lambda_http = { git = "https://github.com/awslabs/aws-lambda-rust-runtime/", branch = "master"}
+serde_json = "1.0"
+rusoto_core = { version = "0.46.0", default_features = false,  features = ["rustls"] }
+rusoto_dynamodb = { version = "0.46.0", default_features = false, features =["rustls"] }
+serde = "^1.0.117"

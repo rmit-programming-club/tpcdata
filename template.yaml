@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:
+  TPCMembers:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: TPCMembers
+      AttributeDefinitions:
+        - AttributeName: student_number
+          AttributeType: S
+      KeySchema:
+        - AttributeName: student_number
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+  Main:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: Main
+      Handler: doesnt.matter
+      Runtime: provided
+      MemorySize: 512
+      CodeUri: .
+      Events: 
+        ApiEvent: 
+          Type: HttpApi
+          Properties:
+            Method: POST
+            Path: /register
+    Metadata:
+      BuildMethod: makefile
