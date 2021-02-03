@@ -1,2 +1,2 @@
 build-Main:
-	cp ./target/lambda/release/output/leadershipdiscordbot-rs/bootstrap $(ARTIFACTS_DIR)
+	cp ./target/lambda/release/output/tpcdata/bootstrap $(ARTIFACTS_DIR)

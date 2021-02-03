@@ -28,5 +28,23 @@ Resources:
           Properties:
             Method: POST
             Path: /register
+        ApiEvent: 
+          Type: HttpApi
+          Properties:
+            Method: GET
+            Path: /members
+      Policies:
+      - Statement:
+        - Sid: AccessTPCTables
+          Effect: Allow
+          Action:
+          - dynamodb:Query
+          - dynamodb:Scan
+          - dynamodb:GetItem
+          - dynamodb:BatchWriteItem
+          - dynamodb:PutItem
+          - dynamodb:DeleteItem
+          Resource: 
+          - "arn:aws:dynamodb:us-east-1:*:table/TPCMembers"
     Metadata:
       BuildMethod: makefile

@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = [
     "Sam Nolan"
 ]
-edition = "2020"
+edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -12,6 +12,10 @@ edition = "2020"
 tokio = { version = "1.1.1", features = ["macros"] }
 lambda_http = { git = "https://github.com/awslabs/aws-lambda-rust-runtime/", branch = "master"}
 serde_json = "1.0"
-rusoto_core = { version = "0.46.0", default_features = false,  features = ["rustls"] }
-rusoto_dynamodb = { version = "0.46.0", default_features = false, features =["rustls"] }
+rusoto_core = "0.46.0"
+rusoto_dynamodb = "0.46.0"
 serde = "^1.0.117"
+serde_dynamodb = { git = "https://github.com/Hazelfire/serde_dynamodb/", branch = "master"}
+http = "0.1.17"
+futures = "0.3.12"
+async-trait = "0.1.42"

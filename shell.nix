@@ -20,5 +20,6 @@ pkgs.mkShell {
     openssl 
     pkgconfig
     aws-sam-cli
+    docker-compose
   ];
 }
